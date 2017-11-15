@@ -1,0 +1,21 @@
+// Place all the styles related to the homepage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/* homepage.css */
+header, footer {
+  padding: 2em;
+  color: white;
+  background-color: black;
+  clear: left;
+  text-align: center;
+}
+aside {
+  margin-left: 1000px;
+  border-left: 1px solid gray;
+  padding: 1em;
+  text-align: center;
+}
+section {
+  margin-left: 50px;
+  float: left;
+}
