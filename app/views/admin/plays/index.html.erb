@@ -14,7 +14,11 @@
       <td><%= play.synopsis %></td>
       <td><%= play.start_date %></td>
       <td><%= play.end_date %></td>
-      <td><%= link_to 'Show', play_path(play) %></td>
+      <td><%= link_to 'Show', admin_play_path(play) %></td>
+      <td><%= link_to 'Edit', edit_admin_play_path(play) %></td>
+      <td><%= link_to 'Delete', admin_play_path(play), method: :delete, data: {confirm: 'Are you sure?'} %></td>
     </tr>
   <% end %>
 </table>
+<br>
+<%= link_to 'New Play', new_admin_play_path %>

@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   resources :plays
   resources :actors
 
+  namespace :admin do
+    resources :plays, :actors
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
