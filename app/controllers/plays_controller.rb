@@ -1,4 +1,5 @@
 class PlaysController < ApplicationController
+  before_action :set_play, only: [:show, :edit, :update, :destroy]
 
   def index
     @plays = Play.all
@@ -9,7 +10,6 @@ class PlaysController < ApplicationController
   end
 
   def edit
-    @play = Play.find(params[:id])
   end
 
   def create
@@ -23,7 +23,6 @@ class PlaysController < ApplicationController
   end
 
   def update
-    @play = Play.find(params[:id])
     if @play.update(play_params)
       flash[:notice] = 'Play was successfully updated.'
       redirect_to play_path(@play)
@@ -33,17 +32,18 @@ class PlaysController < ApplicationController
   end
 
   def show
-    @play = Play.find(params[:id])
   end
 
   def destroy
-    @play = Play.find(params[:id])
     @play.destroy
     flash[:notice] = 'Play was successfully deleted.'
     redirect_to plays_path
   end
 
   private
+  def set_play
+    @play = Play.find(params[:id])
+  end
   def play_params
     params.require(:play).permit(:title, :synopsis, :start_date, :end_date)
   end
