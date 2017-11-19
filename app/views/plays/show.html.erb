@@ -1,0 +1,28 @@
+<p>
+  <%= notice %>
+</p>
+
+<h1>Showing play selected</h1>
+
+<p>
+  <strong>Title:</strong>
+  <%= @play.title %>
+</p>
+
+<p>
+  <strong>Synopsis:</strong>
+  <%= @play.synopsis %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @play.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @play.end_date %>
+</p>
+
+<%= link_to 'Edit', edit_play_path(@play) %> |
+<%= link_to 'Back', plays_path %>

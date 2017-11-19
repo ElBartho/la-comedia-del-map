@@ -1,0 +1,32 @@
+<% if @play.errors.any? %>
+  <h2>The following errors prevented the play from getting created</h2>
+  <ul>
+    <% @play.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end%>
+
+<%= form_for @play do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :synopsis %><br>
+    <%= f.text_area :synopsis %>
+  </p>
+  <p>
+    <%= f.label :start_date %><br>
+    <%= f.date_select :start_date %>
+  </p>
+  <p>
+    <%= f.label :end_date %><br>
+    <%= f.date_select :end_date %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', plays_path %>
