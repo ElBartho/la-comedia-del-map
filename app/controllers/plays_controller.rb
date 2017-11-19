@@ -13,7 +13,6 @@ class PlaysController < ApplicationController
   end
 
   def create
-    #render plain: params[:play].inspect
     @play = Play.new(play_params)
     if @play.save
       flash[:notice] = 'Play was successfully created.'

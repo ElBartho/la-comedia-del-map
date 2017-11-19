@@ -1,0 +1,26 @@
+<p><%= notice %></p>
+
+<h1>Showing actor selected</h1>
+
+<p>
+  <strong>Last Name:</strong>
+  <%= @actor.last_name %>
+</p>
+
+<p>
+  <strong>First Name:</strong>
+  <%= @actor.first_name %>
+</p>
+
+<p>
+  <strong>Date Of Birth:</strong>
+  <%= @actor.date_of_birth %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @actor.gender %>
+</p>
+
+<%= link_to 'Edit', edit_actor_path(@actor) %> |
+<%= link_to 'Back', actors_path %>

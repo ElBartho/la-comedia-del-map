@@ -1,0 +1,24 @@
+<h1>List of Actors</h1>
+
+<table>
+  <tr>
+    <th>Last Name</th>
+    <th>First Name</th>
+    <th>Date Of Birth</th>
+    <th>Gender</th>
+  </tr>
+
+  <%= @actors.each do |actor| %>
+    <tr>
+      <td><%= actor.last_name %></td>
+      <td><%= actor.first_name %></td>
+      <td><%= actor.date_of_birth %></td>
+      <td><%= actor.gender %></td>
+      <td><%= link_to 'Show', actor_path(actor) %></td>
+      <td><%= link_to 'Edit', edit_actor_path(actor) %></td>
+      <td><%= link_to 'Delete', actor_path(actor), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    </tr>
+  <% end %>
+</table>
+<br>
+<%= link_to 'New Actor', new_actor_path %>
