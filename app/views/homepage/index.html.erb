@@ -7,6 +7,14 @@
   <body>
     <header>
       <h1>La Comedia Del Map</h1>
+
+      <% if user_signed_in? %>
+        <%= link_to 'Se deconnecter', destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to 'Se connecter', new_user_session_path %>
+        <%= link_to 'Créer un compte', new_user_registration_path %>        
+      <% end %>
+
     </header>
     <section>
       <h1>À l'affiche</h1>
