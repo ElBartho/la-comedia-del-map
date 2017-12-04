@@ -5,6 +5,6 @@ class PlaysController < ApplicationController
   end
 
   def show
-    @plays = Play.find(params[:id])
+    @play = Play.find(params[:id])
   end
 end
